@@ -12,12 +12,12 @@ const App = () => {
     if (query) {
       try {
         const weatherResponse = await axios.get(
-          `https://api.openweathermap.org/data/2.5/weather?q=${query}&units=metric&appid=${apiKey}`
+          `https://api.openweathermap.org/data/2.5/weather?q=${query}&units=metric&appid=${apiKey}`,
         );
         setWeather(weatherResponse.data);
 
         const forecastResponse = await axios.get(
-          `https://api.openweathermap.org/data/2.5/forecast?q=${query}&units=metric&appid=${apiKey}`
+          `https://api.openweathermap.org/data/2.5/forecast?q=${query}&units=metric&appid=${apiKey}`,
         );
         setForecast(forecastResponse.data.list.slice(0, 5)); // Get forecast for the next 5 time points
         setQuery("");
@@ -35,6 +35,7 @@ const App = () => {
 
   return (
     <div className="app">
+      <h1> Weather App</h1>
       <main>
         <div className="search-box">
           <input
@@ -71,6 +72,23 @@ const App = () => {
           </div>
         )}
       </main>
+      <footer>
+        This project was coded by{" "}
+        <a href="https://github.com/Shiluvax" target="_blank">
+          Xiluva Monareng
+        </a>{" "}
+        and is{" "}
+        <a
+          href="https://github.com/Shiluvax/weather-react-app "
+          target="_blank"
+        >
+          open-sourced on GitHub
+        </a>{" "}
+        and{" "}
+        <a href=" " target="_blank">
+          hosted on Netlify
+        </a>
+      </footer>
     </div>
   );
 };
