@@ -85,7 +85,7 @@ const App = () => {
           open-sourced on GitHub
         </a>{" "}
         and{" "}
-        <a href=" " target="_blank">
+        <a href=" https://shiluva-react-app.netlify.app/ " target="_blank">
           hosted on Netlify
         </a>
       </footer>
